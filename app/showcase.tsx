@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 type HeroSlide = {
   id: number;
@@ -30,43 +30,36 @@ type Product = {
   tone: "blue" | "yellow" | "cream";
 };
 
-type Offer = {
-  id: number;
-  title: string;
-  copy: string;
-  tone: "blue" | "yellow" | "cream";
-};
-
 const heroSlides: HeroSlide[] = [
   {
     id: 1,
-    eyebrow: "Storage tajam untuk rumah urban",
-    title: "Perabot yang langsung terasa premium sejak first fold.",
+    eyebrow: "",
+    title: "Wujudkan hunian impian Anda dengan desain minimalis khas Skandinavia.",
     copy:
-      "Komposisi dibuat memenuhi frame seperti storefront retail modern, dengan blok hero yang padat, tegas, dan tidak lagi tampak kosong di sisi luar.",
+      "",
     cta: "Belanja koleksi baru",
-    image: "/images/Ikea.png",
+    image: "/images/Ikea-dashboard.webp",
     alt: "Tampilan area toko IKEA",
     tone: "blue",
   },
   {
     id: 2,
-    eyebrow: "Dapur lebih rapi",
-    title: "Ritme visual yang hidup tanpa terlihat polos dan mati.",
+    eyebrow: "",
+    title: "Nikmati pengalaman belanjaan unik, mulai dari perabotan hingga kelzatan makanan khas Swedia.",
     copy:
-      "Panel promosi, kartu layanan, dan katalog dibuat lebih aktif agar pengguna merasa sedang menjelajahi situs retail yang benar-benar siap belanja.",
-    cta: "Lihat promo dapur",
+      "",
+    cta: "Lihat promo makanan",
     image: "/images/ikea-makanan.jpg",
     alt: "Produk dan suasana IKEA makanan",
-    tone: "yellow",
+    tone: "cream",
   },
   {
     id: 3,
-    eyebrow: "Family living",
-    title: "Blok besar, warna tegas, dan transisi section yang lebih rapat.",
+    eyebrow: "",
+    title: "Bawa pulang furnitur berkualitas, solusi cerdas untuk menciptakan kehidupan yang lebih baik.",
     copy:
-      "Jarak antarelemen dipadatkan dan container lebar dibuka penuh agar halaman terasa lebih berani, mewah, dan yakin.",
-    cta: "Jelajahi family picks",
+      "",
+    cta: "Jelajahi family packs",
     image: "/images/ikea-family.jpg",
     alt: "Promosi IKEA Family",
     tone: "cream",
@@ -76,7 +69,7 @@ const heroSlides: HeroSlide[] = [
 const products: Product[] = [
   {
     id: 1,
-    name: "BJORNA",
+    name: "SOFFA",
     category: "Ruang Tamu",
     description: "Sofa modular bertekstur halus untuk ruang tamu modern yang rapi.",
     price: 4299000,
@@ -85,13 +78,13 @@ const products: Product[] = [
     dimensions: "210 x 92 x 84 cm",
     material: "Kayu pinus, busa padat, kain poliester premium.",
     badge: "Hot",
-    image: "/images/Ikea.png",
+    image: "/images/sofa.png",
     alt: "Sofa modular BJORNA",
-    tone: "blue",
+    tone: "cream",
   },
   {
     id: 2,
-    name: "LAGOM",
+    name: "TABELL",
     category: "Workspace",
     description: "Meja kerja dengan tray kabel tersembunyi dan tampilan sangat bersih.",
     price: 2599000,
@@ -99,13 +92,13 @@ const products: Product[] = [
     stock: "7 unit tersedia di Alam Sutera",
     dimensions: "140 x 70 x 75 cm",
     material: "Oak veneer, kaki baja powder-coated.",
-    image: "/images/ikea-business.jpg",
+    image: "/images/table.png",
     alt: "Workspace LAGOM",
     tone: "cream",
   },
   {
     id: 3,
-    name: "KOKA",
+    name: "KÖKSHYLLOR",
     category: "Dapur",
     description: "Rak dapur terbuka yang membuat jar, bumbu, dan alat masak tertata.",
     price: 999000,
@@ -114,13 +107,13 @@ const products: Product[] = [
     dimensions: "90 x 38 x 180 cm",
     material: "Baja galvanis dan panel laminasi anti-gores.",
     badge: "New",
-    image: "/images/ikea-makanan.jpg",
+    image: "/images/kitchen.png",
     alt: "Rak dapur KOKA",
-    tone: "yellow",
+    tone: "cream",
   },
   {
     id: 4,
-    name: "SMYGA",
+    name: "SKÅP",
     category: "Kamar",
     description: "Kabinet laci yang tenang, simetris, dan cocok untuk interior terang.",
     price: 1899000,
@@ -128,7 +121,7 @@ const products: Product[] = [
     stock: "20 unit tersedia di Sentul City",
     dimensions: "80 x 48 x 102 cm",
     material: "Particle board, veneer ash, handle aluminium.",
-    image: "/images/ikea-alsut.jpeg",
+    image: "/images/dresser.png",
     alt: "Kabinet laci SMYGA",
     tone: "cream",
   },
@@ -188,42 +181,24 @@ const products: Product[] = [
   },
 ];
 
-const offers: Offer[] = [
-  {
-    id: 1,
-    title: "Diskon sampai 50%",
-    copy: "Panel promo besar dibuat keras dan langsung terbaca, tanpa warna pudar.",
-    tone: "yellow",
-  },
-  {
-    id: 2,
-    title: "Klik & collect",
-    copy: "Checkout lebih cepat dengan pickup toko dan keranjang yang selalu siap di header.",
-    tone: "blue",
-  },
-  {
-    id: 3,
-    title: "Family price minggu ini",
-    copy: "Harga khusus anggota ditampilkan sebagai blok kuat, bukan info kecil yang mudah terlewat.",
-    tone: "cream",
-  },
-];
-
 const services = [
   {
     title: "Desain Interior",
     copy: "Bantuan ahli untuk mewujudkan ruang impian Anda dengan hasil yang lebih terarah.",
-    image: "/images/draw.png",
+    image: "/images/draw-bg.jpg",
+    icon: "/images/draw.png",
   },
   {
     title: "Delivery",
     copy: "Belanja dari mana saja dan langsung kirim ke rumah tanpa alur yang rumit.",
-    image: "/images/truck.png",
+    image: "/images/truck-bg.jpeg",
+    icon: "/images/truck.png",
   },
   {
     title: "Perakitan",
     copy: "Tim kami membantu merakit produk agar pengalaman setelah checkout tetap nyaman.",
-    image: "/images/drill.png",
+    image: "/images/drill-bg.png",
+    icon: "/images/drill.png",
   },
 ];
 
@@ -240,7 +215,7 @@ function formatCurrency(amount: number) {
   }).format(amount);
 }
 
-function toneClass(tone: Product["tone"] | HeroSlide["tone"] | Offer["tone"]) {
+function toneClass(tone: Product["tone"] | HeroSlide["tone"]) {
   if (tone === "blue") {
     return "bg-[var(--ikea-blue)] text-white";
   }
@@ -324,14 +299,6 @@ export function IkeaShowcase() {
   const [quickViewId, setQuickViewId] = useState<number | null>(null);
   const [cart, setCart] = useState(starterCart);
 
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveHero((current) => (current + 1) % heroSlides.length);
-    }, 4500);
-
-    return () => window.clearInterval(timer);
-  }, []);
-
   const quickView = products.find((product) => product.id === quickViewId) ?? null;
 
   const cartEntries = useMemo(() => {
@@ -385,6 +352,14 @@ export function IkeaShowcase() {
 
   const hero = heroSlides[activeHero];
 
+  const showPrevHero = () => {
+    setActiveHero((current) => (current - 1 + heroSlides.length) % heroSlides.length);
+  };
+
+  const showNextHero = () => {
+    setActiveHero((current) => (current + 1) % heroSlides.length);
+  };
+
   return (
     <div className="min-h-screen bg-[#f3f1ec] text-slate-950">
       <header className="sticky top-0 z-50 bg-white">
@@ -396,13 +371,20 @@ export function IkeaShowcase() {
           </div>
         </div>
         <div className="grid grid-cols-[auto_1fr_auto_auto] items-center gap-4 border-b border-slate-900 px-4 py-4 sm:px-8 lg:px-10">
-          <div className="inline-flex bg-[var(--ikea-blue)] px-4 py-3 text-lg font-black tracking-[0.34em] text-[var(--ikea-yellow)]">
-            IKEA
+          <div className="relative h-12 w-[102px] overflow-hidden">
+            <Image
+              src="/images/Ikea.png"
+              alt="IKEA logo"
+              fill
+              sizes="102px"
+              className="object-contain"
+              priority
+            />
           </div>
           <nav className="hidden items-center gap-6 text-sm font-black text-slate-700 lg:flex">
             <a href="#promo">Promo</a>
             <a href="#storage">Tata Barang</a>
-            <a href="#baru">Terbaru</a>
+            <a href="#jelajahi">Jelajahi IKEA</a>
             <a href="#mainan">Mainan</a>
             <a href="#layanan">Layanan</a>
           </nav>
@@ -418,7 +400,7 @@ export function IkeaShowcase() {
             <button
               type="button"
               onClick={() => setIsCartOpen((current) => !current)}
-              className="relative flex items-center justify-center bg-slate-950 px-4 py-3"
+              className="relative flex items-center justify-center bg-white px-4 py-3"
               aria-label="Buka keranjang"
             >
               <Image
@@ -428,24 +410,35 @@ export function IkeaShowcase() {
                 height={24}
                 className="h-6 w-6 object-contain"
               />
-              <span className="ml-2 text-sm font-black text-white">{cartCount}</span>
+              <span className="ml-2 text-sm font-black text-slate-950">{cartCount}</span>
             </button>
           </div>
         </div>
       </header>
 
       <main className="w-full">
-        <section id="promo" className="grid gap-0 xl:grid-cols-[1.6fr_1fr]">
-          <article className="grid min-h-[620px] grid-cols-1 bg-white xl:grid-cols-[0.92fr_1.08fr]">
+        <section id="promo" className="relative min-h-[700px] overflow-hidden bg-slate-950 text-white">
+          <div className="absolute inset-0">
+            <Image
+              src={hero.image}
+              alt={hero.alt}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-slate-950/45" />
+          </div>
+          <article className="relative z-10 grid min-h-[700px] grid-cols-1 xl:grid-cols-[0.92fr_1.08fr]">
             <div className="flex flex-col justify-between px-5 py-8 sm:px-8 lg:px-10 lg:py-10">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.24em] text-slate-500">
+                <p className="text-xs font-black uppercase tracking-[0.24em] text-white/70">
                   {hero.eyebrow}
                 </p>
                 <h1 className="mt-5 max-w-3xl text-5xl font-black leading-[0.98] sm:text-6xl lg:text-7xl">
                   {hero.title}
                 </h1>
-                <p className="font-ff-zwo mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+                <p className="font-ff-zwo mt-6 max-w-2xl text-base leading-8 text-white/85 sm:text-lg">
                   {hero.copy}
                 </p>
               </div>
@@ -460,60 +453,49 @@ export function IkeaShowcase() {
                     Lihat detail cepat
                   </button>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={showPrevHero}
+                    className="hero-arrow"
+                    aria-label="Slide sebelumnya"
+                  >
+                    ←
+                  </button>
                   {heroSlides.map((slide, index) => (
                     <button
                       key={slide.id}
                       type="button"
                       onClick={() => setActiveHero(index)}
                       className={`h-3 ${
-                        activeHero === index ? "w-16 bg-slate-950" : "w-4 bg-slate-300"
+                        activeHero === index ? "w-16 bg-white" : "w-4 bg-white/45"
                       }`}
                       aria-label={`Slide ${index + 1}`}
                     />
                   ))}
+                  <button
+                    type="button"
+                    onClick={showNextHero}
+                    className="hero-arrow"
+                    aria-label="Slide berikutnya"
+                  >
+                    →
+                  </button>
                 </div>
               </div>
             </div>
-            <div className={`relative min-h-[360px] ${toneClass(hero.tone)}`}>
-              <Image
-                src={hero.image}
-                alt={hero.alt}
-                fill
-                priority
-                sizes="100vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-slate-950/10" />
-            </div>
           </article>
-
-          <aside className="grid grid-cols-1 gap-0 md:grid-cols-3 xl:grid-cols-1">
-            {offers.map((offer) => (
-              <article key={offer.id} className={`min-h-[206px] px-5 py-8 sm:px-8 ${toneClass(offer.tone)}`}>
-                <p className="text-xs font-black uppercase tracking-[0.24em] opacity-75">
-                  Penawaran hari ini
-                </p>
-                <h2 className="mt-4 text-4xl font-black leading-tight">{offer.title}</h2>
-                <p className="font-ff-zwo mt-4 max-w-md text-base leading-8 opacity-85">
-                  {offer.copy}
-                </p>
-              </article>
-            ))}
-          </aside>
         </section>
 
         <section id="storage" className="section-shell bg-white">
           <div className="section-header">
             <div>
               <p className="text-3xl font-black uppercase tracking-[0.24em] text-slate-500">
-                Produk tata-barang yang lebih persuasif
+                Produk IKEA paling TOP
               </p>
               <h2 className="mt-3 text-4xl font-black sm:text-2xl">
-                Kolase storage yang lebih berani
+                Pilihan tepat untuk kenyamanan dan gaya hidup sehari-hari.
               </h2>
-            </div>
-            <div className="monster-eyes hidden lg:block">
               <span />
               <span />
             </div>
@@ -537,7 +519,7 @@ export function IkeaShowcase() {
               onQuickView={setQuickViewId}
               onAddToCart={addToCart}
             />
-            <article className="storage-copy-block bg-[var(--ikea-yellow)]">
+            <article className="storage-copy-block bg-[#f2ede2]">
               <h3 className="text-3xl font-black">Rak modular untuk sudut sempit</h3>
               <p className="font-ff-zwo mt-4 text-base leading-8 text-slate-800">
                 Kartu manfaat dibuat besar dan menyatu dengan kolase supaya section terasa lebih hidup.
@@ -558,96 +540,6 @@ export function IkeaShowcase() {
           </div>
         </section>
 
-        <section id="baru" className="section-shell bg-[#f3f1ec]">
-          <div className="section-header">
-            <div>
-              <p className="text-3xl font-black uppercase tracking-[0.24em] text-slate-500">
-                Terbaru di IKEA
-              </p>
-              <h2 className="mt-3 text-4xl font-black sm:text-2xl">
-                Perabotan yang baru dirilis
-              </h2>
-            </div>
-            <button className="sharp-button sharp-button-light">Lihat semua produk</button>
-          </div>
-          <div className="release-collage">
-            <article className="release-card release-large">
-              <div className="absolute inset-0">
-                <Image
-                  src="/images/ikea-alsut.jpeg"
-                  alt="Produk baru IKEA"
-                  fill
-                  sizes="100vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="release-overlay">
-                <span className="release-badge">Baru</span>
-                <h3 className="mt-2 text-4xl font-black">SMYGA</h3>
-                <p className="font-ff-zwo text-base leading-7">
-                  Kabinet laci yang tenang dan rapi untuk ruang tidur terang.
-                </p>
-                <p className="mt-3 text-3xl font-black">{formatCurrency(products[3].price)}</p>
-              </div>
-            </article>
-            <article className="release-text bg-[#d35f11] text-white">
-              <span className="text-6xl font-black leading-[0.92] sm:text-7xl">Baru</span>
-              <span className="text-6xl font-black leading-[0.92] sm:text-7xl">Baru</span>
-            </article>
-            <article className="release-card release-tall">
-              <div className="absolute inset-0">
-                <Image
-                  src="/images/ikea-business.jpg"
-                  alt="Lemari terbaru IKEA"
-                  fill
-                  sizes="50vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="release-overlay">
-                <span className="release-badge">Baru</span>
-                <h3 className="mt-2 text-3xl font-black">LAGOM</h3>
-                <p className="font-ff-zwo text-sm leading-6">
-                  Workspace compact dengan tampilan profesional.
-                </p>
-                <p className="mt-3 text-3xl font-black">{formatCurrency(products[1].price)}</p>
-              </div>
-            </article>
-            <article className="release-card release-mid">
-              <div className="absolute inset-0">
-                <Image
-                  src="/images/ikea-makanan.jpg"
-                  alt="Produk aksen baru IKEA"
-                  fill
-                  sizes="50vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="release-overlay">
-                <span className="release-badge">Baru</span>
-                <h3 className="mt-2 text-3xl font-black">KOKA</h3>
-                <p className="mt-3 text-3xl font-black">{formatCurrency(products[2].price)}</p>
-              </div>
-            </article>
-            <article className="release-card release-small">
-              <div className="absolute inset-0">
-                <Image
-                  src="/images/ikea-family.jpg"
-                  alt="Produk keluarga baru IKEA"
-                  fill
-                  sizes="50vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="release-overlay">
-                <span className="release-badge">Baru</span>
-                <h3 className="mt-2 text-3xl font-black">ALVA</h3>
-                <p className="mt-3 text-3xl font-black">{formatCurrency(products[7].price)}</p>
-              </div>
-            </article>
-          </div>
-        </section>
-
         <section id="mainan" className="section-shell bg-white">
           <div className="section-header">
             <div>
@@ -655,68 +547,167 @@ export function IkeaShowcase() {
                 Mainan dan boneka
               </p>
               <h2 className="mt-3 text-4xl font-black sm:text-2xl">
-                Empuk, lucu, dan pastinya seru buat diajak main.​
+                Empuk, gemas, dan tentunya asik buat diajak main.​
               </h2>
             </div>
           </div>
           <div className="toy-collage">
-            <article className="toy-panel bg-[var(--ikea-yellow)] text-slate-950">
+            <article className="toy-panel toy-photo-card text-white">
               <div className="toy-media relative">
                 <Image
-                  src="/images/draw.png"
-                  alt="Panel mainan anak"
+                  src="/images/beruang.jpg"
+                  alt="Boneka BJÖRN"
                   fill
                   sizes="100vw"
-                  className="object-cover mix-blend-multiply"
+                  className="object-cover"
                 />
+                <div className="toy-cream-overlay" />
               </div>
-              <div className="p-6 sm:p-8">
-                <span className="release-badge bg-slate-950 text-white">Baru</span>
-                <h3 className="mt-4 text-4xl font-black">MORBY</h3>
-                <p className="font-ff-zwo mt-3 max-w-md text-base leading-8">
-                  Boneka tekstur lembut dengan komposisi panel besar agar section anak terasa ceria dan penuh energi.
+              <div className="toy-copy p-6 sm:p-8">
+                <h3 className="mt-4 text-4xl font-black sm:text-5xl">DJUNGELSKOG</h3>
+                <p className="font-ff-zwo mt-2 max-w-md text-lg leading-8 text-white/90">
+                  Boneka, beruang lembut
                 </p>
-                <p className="mt-4 text-3xl font-black">{formatCurrency(products[4].price)}</p>
+                <p className="mt-3 text-4xl font-black sm:text-5xl">Rp129.000</p>
               </div>
             </article>
-            <article className="toy-panel bg-[#efebe2] text-slate-950">
+            <article className="toy-panel toy-message-card bg-[#7a5d49] text-white">
+              <div className="p-6 sm:p-8">
+                <p className="font-ff-zwo text-2xl leading-tight sm:text-3xl">
+                  Yuk kenalan sama teman-teman
+                </p>
+                <p className="mt-4 text-6xl font-black leading-[0.9] sm:text-7xl">
+                  Punch!
+                </p>
+              </div>
+            </article>
+            <article className="toy-panel toy-photo-card text-white">
               <div className="toy-media relative">
                 <Image
-                  src="/images/drill.png"
-                  alt="Panel perakitan anak"
+                  src="/images/anjing.jpg"
+                  alt="Boneka GOSIG"
                   fill
                   sizes="50vw"
-                  className="object-cover mix-blend-multiply"
+                  className="object-cover"
                 />
+                <div className="toy-cream-overlay" />
               </div>
-              <div className="p-6">
-                <h3 className="text-3xl font-black">NORDEN MINI</h3>
-                <p className="font-ff-zwo mt-3 text-sm leading-7">
-                  Aksen mungil yang tetap tampil kuat dalam grid asimetris.
+              <div className="toy-copy p-6">
+                <h3 className="text-3xl font-black sm:text-4xl">GOSIG</h3>
+                <p className="font-ff-zwo mt-2 text-base leading-7 text-white/90">
+                  Boneka, anjing
                 </p>
+                <p className="mt-3 text-3xl font-black sm:text-4xl">Rp199.000</p>
               </div>
             </article>
-            <article className="toy-panel bg-[var(--ikea-blue)] text-white">
+            <article className="toy-panel toy-photo-card text-white">
               <div className="toy-media relative">
                 <Image
-                  src="/images/truck.png"
-                  alt="Panel produk keluarga"
+                  src="/images/panda.webp"
+                  alt="Boneka JÄTTESTOR"
                   fill
                   sizes="50vw"
-                  className="object-cover mix-blend-screen"
+                  className="object-cover"
                 />
+                <div className="toy-cream-overlay" />
               </div>
-              <div className="p-6">
-                <h3 className="text-3xl font-black">FJALL</h3>
-                <p className="font-ff-zwo mt-3 text-sm leading-7 text-white/85">
-                  Blok tinggi untuk menjaga ritme visual tetap tidak seragam.
+              <div className="toy-copy p-6">
+                <h3 className="text-3xl font-black sm:text-4xl">JÄTTESTOR</h3>
+                <p className="font-ff-zwo mt-2 text-base leading-7 text-white/90">
+                  Boneka, panda
                 </p>
+                <p className="mt-3 text-3xl font-black sm:text-4xl">Rp199.000</p>
               </div>
             </article>
-            <article className="toy-panel bg-[#d35f11] text-white">
-              <div className="p-6 sm:p-8">
-                <p className="text-5xl font-black leading-none sm:text-6xl">Play</p>
-                <p className="text-5xl font-black leading-none sm:text-6xl">More</p>
+          </div>
+        </section>
+
+        <section id="jelajahi" className="section-shell bg-[#f3f1ec]">
+          <div className="section-header">
+            <div>
+              <p className="text-3xl font-black uppercase tracking-[0.24em] text-slate-500">
+                JELAJAHI IKEA
+              </p>
+              <h2 className="mt-3 text-4xl font-black sm:text-2xl">
+                Jelajahi IKEA
+              </h2>
+            </div>
+          </div>
+          <div className="explore-row">
+            <article className="explore-card">
+              <div className="explore-media">
+                <Image
+                  src="/images/ikea-alsut.jpeg"
+                  alt="Toko IKEA"
+                  fill
+                  sizes="25vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="explore-copy">
+                <div className="flex items-center justify-between gap-4">
+                  <h3 className="text-4xl font-black sm:text-3xl">Toko IKEA</h3>
+                  <button className="explore-arrow" aria-label="Jelajahi Toko IKEA">
+                    →
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article className="explore-card">
+              <div className="explore-media">
+                <Image
+                  src="/images/ikea-makanan.jpg"
+                  alt="Makanan IKEA"
+                  fill
+                  sizes="25vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="explore-copy">
+                <div className="flex items-center justify-between gap-4">
+                  <h3 className="text-4xl font-black sm:text-3xl">Makanan IKEA</h3>
+                  <button className="explore-arrow" aria-label="Jelajahi Makanan IKEA">
+                    →
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article className="explore-card">
+              <div className="explore-media">
+                <Image
+                  src="/images/ikea-business.jpg"
+                  alt="IKEA Bisnis"
+                  fill
+                  sizes="25vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="explore-copy">
+                <div className="flex items-center justify-between gap-4">
+                  <h3 className="text-4xl font-black sm:text-3xl">IKEA Bisnis</h3>
+                  <button className="explore-arrow" aria-label="Jelajahi IKEA Bisnis">
+                    →
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article className="explore-card">
+              <div className="explore-media">
+                <Image
+                  src="/images/ikea-family.jpg"
+                  alt="IKEA Family"
+                  fill
+                  sizes="25vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="explore-copy">
+                <div className="flex items-center justify-between gap-4">
+                  <h3 className="text-4xl font-black sm:text-3xl">IKEA Family</h3>
+                  <button className="explore-arrow" aria-label="Jelajahi IKEA Family">
+                    →
+                  </button>
+                </div>
               </div>
             </article>
           </div>
@@ -733,32 +724,39 @@ export function IkeaShowcase() {
               </h2>
             </div>
           </div>
-          <div className="grid gap-0 lg:grid-cols-3">
-            {services.map((service, index) => (
+          <div className="services-row">
+            {services.map((service) => (
               <article
                 key={service.title}
-                className={`grid min-h-[420px] grid-rows-[1fr_auto] ${
-                  index === 1
-                    ? "bg-[var(--ikea-blue)] text-white"
-                    : index === 2
-                      ? "bg-[var(--ikea-yellow)] text-slate-950"
-                      : "bg-white text-slate-950"
-                }`}
+                className="service-card text-white"
               >
-                <div className="relative min-h-[250px]">
+                <div className="service-media">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
                     sizes="33vw"
-                    className="object-contain p-8"
+                    className="object-cover"
                   />
+                  <div className="service-overlay" />
                 </div>
-                <div className="px-6 pb-8 sm:px-8">
+                <div className="service-copy">
+                  <div className="service-icon-wrap">
+                    <Image
+                      src={service.icon}
+                      alt=""
+                      width={76}
+                      height={76}
+                      className="service-icon"
+                    />
+                  </div>
                   <h3 className="text-4xl font-black">{service.title}</h3>
                   <p className="font-ff-zwo mt-4 text-base leading-8 opacity-85">
                     {service.copy}
                   </p>
+                  <button className="service-arrow" aria-label={`Lihat layanan ${service.title}`}>
+                    →
+                  </button>
                 </div>
               </article>
             ))}
@@ -890,7 +888,7 @@ export function IkeaShowcase() {
               </div>
               <div className="mt-4 flex items-center justify-between">
                 <span className="text-base font-bold">Total</span>
-                <span className="text-3xl font-black">{formatCurrency(cartTotal + 149000)}</span>
+                <span className="text-3xl font-black">{formatCurrency(cartTotal)}</span>
               </div>
               <button className="mt-5 w-full bg-[var(--ikea-yellow)] px-5 py-4 text-sm font-black uppercase tracking-[0.16em] text-slate-950">
                 Lanjut checkout
