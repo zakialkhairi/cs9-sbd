@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "IKEA MVP Storefront",
+  title: "IKEA Indonesia",
   description: "Frontend MVP e-commerce bergaya IKEA dengan katalog, detail cepat, dan keranjang belanja.",
 };
 
