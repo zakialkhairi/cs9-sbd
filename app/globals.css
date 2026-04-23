@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #101828;
+  --ikea-blue: #0051ba;
+  --ikea-yellow: #ffda1a;
+  --ikea-surface: #f5f7fa;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Noto Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Noto Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+a,
+button,
+input {
+  transition-duration: 180ms;
+}
+
+.product-visual,
+.product-tile-visual {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.95), transparent 26%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.28));
+}
+
+.product-floor {
+  position: absolute;
+  inset-inline: 10%;
+  bottom: 9%;
+  height: 16%;
+  border-radius: 999px;
+  background: rgba(132, 94, 55, 0.15);
+}
+
+.product-rug {
+  position: absolute;
+  left: 20%;
+  right: 24%;
+  bottom: 12%;
+  height: 18%;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.product-sofa {
+  position: absolute;
+  left: 18%;
+  right: 22%;
+  bottom: 28%;
+  height: 33%;
+  border-radius: 2rem 2rem 1.5rem 1.5rem;
+  background: linear-gradient(180deg, #fefefe, #dde7f2);
+  box-shadow: 0 22px 48px -30px rgba(15, 23, 42, 0.42);
+}
+
+.product-sofa span:first-child,
+.product-sofa span:last-child {
+  position: absolute;
+  top: 18%;
+  height: 44%;
+  width: 28%;
+  border-radius: 1rem;
+  background: rgba(0, 81, 186, 0.12);
+}
+
+.product-sofa span:first-child {
+  left: 10%;
+}
+
+.product-sofa span:last-child {
+  right: 10%;
+}
+
+.product-table {
+  position: absolute;
+  right: 16%;
+  bottom: 18%;
+  height: 16%;
+  width: 17%;
+  border-radius: 1.5rem;
+  background: linear-gradient(180deg, #ffd94e, #f3c816);
+  box-shadow: 0 18px 34px -24px rgba(15, 23, 42, 0.45);
+}
+
+.product-lamp {
+  position: absolute;
+  left: 14%;
+  bottom: 21%;
+  height: 42%;
+  width: 5%;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.12);
+}
+
+.product-lamp::before {
+  content: "";
+  position: absolute;
+  left: -175%;
+  top: -7%;
+  height: 25%;
+  width: 220%;
+  border-radius: 999px 999px 20% 20%;
+  background: #ffffff;
+}
+
+.product-lamp::after {
+  content: "";
+  position: absolute;
+  left: -125%;
+  bottom: -3%;
+  height: 7%;
+  width: 180%;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.18);
+}
+
+.product-tile-base {
+  position: absolute;
+  inset-inline: 22%;
+  bottom: 16%;
+  height: 34%;
+  border-radius: 1.75rem;
+  box-shadow: 0 16px 36px -28px rgba(15, 23, 42, 0.4);
+}
+
+.product-tile-accent {
+  position: absolute;
+  left: 16%;
+  top: 18%;
+  height: 20%;
+  width: 20%;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.product-tile-object {
+  position: absolute;
+  right: 16%;
+  bottom: 18%;
+  height: 38%;
+  width: 12%;
+  border-radius: 999px 999px 30% 30%;
+  background: rgba(0, 81, 186, 0.16);
+}
+
+::selection {
+  background: rgba(255, 218, 26, 0.75);
+  color: #0f172a;
+}
