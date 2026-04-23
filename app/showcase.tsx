@@ -38,7 +38,7 @@ const heroSlides: HeroSlide[] = [
     copy:
       "",
     cta: "Belanja koleksi baru",
-    image: "/images/Ikea-dashboard2.jpg",
+    image: "/images/ikea-dashboard.png",
     alt: "Tampilan area toko IKEA",
     tone: "blue",
   },
