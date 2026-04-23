@@ -534,88 +534,6 @@ export function IkeaShowcase() {
           </div>
         </section>
 
-        <section id="mainan" className="section-shell bg-white">
-          <div className="section-header">
-            <div>
-              <p className="text-3xl font-black uppercase tracking-[0.24em] text-slate-500">
-                Mainan dan boneka
-              </p>
-              <h2 className="mt-3 text-4xl font-black sm:text-2xl">
-                Empuk, gemas, dan tentunya asik buat diajak main.​
-              </h2>
-            </div>
-          </div>
-          <div className="toy-collage">
-            <article className="toy-panel toy-photo-card text-white">
-              <div className="toy-media relative">
-                <Image
-                  src="/images/beruang.jpg"
-                  alt="Boneka BJÖRN"
-                  fill
-                  sizes="100vw"
-                  className="object-cover"
-                />
-                <div className="toy-cream-overlay" />
-              </div>
-              <div className="toy-copy p-6 sm:p-8">
-                <h3 className="mt-4 text-4xl font-black sm:text-5xl">DJUNGELSKOG</h3>
-                <p className="font-ff-zwo mt-2 max-w-md text-lg leading-8 text-white/90">
-                  Boneka, beruang lembut
-                </p>
-                <p className="mt-3 text-4xl font-black sm:text-5xl">Rp129.000</p>
-              </div>
-            </article>
-            <article className="toy-panel toy-message-card bg-[#7a5d49] text-white">
-              <div className="p-6 sm:p-8">
-                <p className="font-ff-zwo text-2xl leading-tight sm:text-3xl">
-                  Yuk kenalan sama teman-teman
-                </p>
-                <p className="mt-4 text-6xl font-black leading-[0.9] sm:text-7xl">
-                  Punch!
-                </p>
-              </div>
-            </article>
-            <article className="toy-panel toy-photo-card text-white">
-              <div className="toy-media relative">
-                <Image
-                  src="/images/anjing.jpg"
-                  alt="Boneka GOSIG"
-                  fill
-                  sizes="50vw"
-                  className="object-cover"
-                />
-                <div className="toy-cream-overlay" />
-              </div>
-              <div className="toy-copy p-6">
-                <h3 className="text-3xl font-black sm:text-4xl">GOSIG</h3>
-                <p className="font-ff-zwo mt-2 text-base leading-7 text-white/90">
-                  Boneka, anjing
-                </p>
-                <p className="mt-3 text-3xl font-black sm:text-4xl">Rp199.000</p>
-              </div>
-            </article>
-            <article className="toy-panel toy-photo-card text-white">
-              <div className="toy-media relative">
-                <Image
-                  src="/images/panda.webp"
-                  alt="Boneka JÄTTESTOR"
-                  fill
-                  sizes="50vw"
-                  className="object-cover"
-                />
-                <div className="toy-cream-overlay" />
-              </div>
-              <div className="toy-copy p-6">
-                <h3 className="text-3xl font-black sm:text-4xl">JÄTTESTOR</h3>
-                <p className="font-ff-zwo mt-2 text-base leading-7 text-white/90">
-                  Boneka, panda
-                </p>
-                <p className="mt-3 text-3xl font-black sm:text-4xl">Rp199.000</p>
-              </div>
-            </article>
-          </div>
-        </section>
-
         <section id="jelajahi" className="section-shell bg-[#f3f1ec]">
           <div className="section-header">
             <div>
@@ -702,6 +620,88 @@ export function IkeaShowcase() {
                     →
                   </button>
                 </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="mainan" className="section-shell bg-white">
+          <div className="section-header">
+            <div>
+              <p className="text-3xl font-black uppercase tracking-[0.24em] text-slate-500">
+                Mainan dan boneka
+              </p>
+              <h2 className="mt-3 text-4xl font-black sm:text-2xl">
+                Empuk, gemas, dan tentunya asik buat diajak main.​
+              </h2>
+            </div>
+          </div>
+          <div className="toy-collage">
+            <article className="toy-panel toy-photo-card text-white">
+              <div className="toy-media relative">
+                <Image
+                  src="/images/beruang.jpg"
+                  alt="Boneka BJÖRN"
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                />
+                <div className="toy-cream-overlay" />
+              </div>
+              <div className="toy-copy p-6 sm:p-8">
+                <h3 className="mt-4 text-4xl font-black sm:text-5xl">DJUNGELSKOG</h3>
+                <p className="font-ff-zwo mt-2 max-w-md text-lg leading-8 text-white/90">
+                  Boneka, beruang lembut
+                </p>
+                <p className="mt-3 text-4xl font-black sm:text-5xl">Rp129.000</p>
+              </div>
+            </article>
+            <article className="toy-panel toy-message-card bg-[#7a5d49] text-white">
+              <div className="p-6 sm:p-8">
+                <p className="font-ff-zwo text-2xl leading-tight sm:text-3xl">
+                  Yuk kenalan sama teman-teman
+                </p>
+                <p className="mt-4 text-6xl font-black leading-[0.9] sm:text-7xl">
+                  Punch!
+                </p>
+              </div>
+            </article>
+            <article className="toy-panel toy-photo-card text-white">
+              <div className="toy-media relative">
+                <Image
+                  src="/images/anjing.jpg"
+                  alt="Boneka GOSIG"
+                  fill
+                  sizes="50vw"
+                  className="object-cover"
+                />
+                <div className="toy-cream-overlay" />
+              </div>
+              <div className="toy-copy p-6">
+                <h3 className="text-3xl font-black sm:text-4xl">GOSIG</h3>
+                <p className="font-ff-zwo mt-2 text-base leading-7 text-white/90">
+                  Boneka, anjing
+                </p>
+                <p className="mt-3 text-3xl font-black sm:text-4xl">Rp199.000</p>
+              </div>
+            </article>
+            <article className="toy-panel toy-photo-card text-white">
+              <div className="toy-media relative">
+                <Image
+                  src="/images/panda.webp"
+                  alt="Boneka JÄTTESTOR"
+                  fill
+                  sizes="50vw"
+                  className="object-cover"
+                />
+                <div className="toy-cream-overlay" />
+              </div>
+              <div className="toy-copy p-6">
+                <h3 className="text-3xl font-black sm:text-4xl">JÄTTESTOR</h3>
+                <p className="font-ff-zwo mt-2 text-base leading-7 text-white/90">
+                  Boneka, panda
+                </p>
+                <p className="mt-3 text-3xl font-black sm:text-4xl">Rp199.000</p>
               </div>
             </article>
           </div>
