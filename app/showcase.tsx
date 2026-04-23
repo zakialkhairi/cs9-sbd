@@ -60,7 +60,7 @@ const heroSlides: HeroSlide[] = [
     copy:
       "",
     cta: "Jelajahi family packs",
-    image: "/images/ikea-family.jpg",
+    image: "/images/ikea-family2.jpeg",
     alt: "Promosi IKEA Family",
     tone: "cream",
   },
@@ -382,7 +382,7 @@ export function IkeaShowcase() {
             />
           </div>
           <nav className="hidden items-center gap-6 text-sm font-black text-slate-700 lg:flex">
-            <a href="#promo">Promo</a>
+            <a href="#promo">Dashboard</a>
             <a href="#storage">Tata Barang</a>
             <a href="#jelajahi">Jelajahi IKEA</a>
             <a href="#mainan">Mainan</a>
@@ -502,9 +502,9 @@ export function IkeaShowcase() {
           </div>
           <div className="storage-collage">
             <article className="storage-copy-block bg-[#f2ede2]">
-              <h3 className="text-3xl font-black">Tempat praktis untuk pakaian</h3>
+              <h3 className="text-3xl font-black">Furnitur Modern untuk Ruang Nyaman</h3>
               <p className="font-ff-zwo mt-4 text-base leading-8 text-slate-700">
-                Tidak lagi berupa kotak-kotak seragam. Bagian ini sekarang dibuat seperti editorial grid dengan ritme ukuran yang lebih kuat.
+                Koleksi furnitur modern yang mengutamakan desain sederhana, warna netral, dan fungsi praktis. Setiap elemen dirancang dengan garis bersih dan tampilan minimalis untuk menciptakan suasana ruang yang tenang dan teratur. Material dan bentuknya dipilih agar mudah dipadukan dengan berbagai gaya interior, sekaligus tetap nyaman digunakan sehari-hari. Dirancang untuk membantu menata ruang agar lebih rapi, efisien, dan estetis tanpa mengorbankan kenyamanan.
               </p>
             </article>
             <ProductTile
@@ -519,12 +519,6 @@ export function IkeaShowcase() {
               onQuickView={setQuickViewId}
               onAddToCart={addToCart}
             />
-            <article className="storage-copy-block bg-[#f2ede2]">
-              <h3 className="text-3xl font-black">Rak modular untuk sudut sempit</h3>
-              <p className="font-ff-zwo mt-4 text-base leading-8 text-slate-800">
-                Kartu manfaat dibuat besar dan menyatu dengan kolase supaya section terasa lebih hidup.
-              </p>
-            </article>
             <ProductTile
               product={products[2]}
               className="storage-item storage-c"
@@ -766,12 +760,18 @@ export function IkeaShowcase() {
 
       <footer className="grid gap-0 bg-slate-950 text-white lg:grid-cols-[1.3fr_0.7fr]">
         <div className="px-5 py-10 sm:px-8 lg:px-10">
-          <div className="inline-flex bg-[var(--ikea-blue)] px-4 py-3 text-lg font-black tracking-[0.34em] text-[var(--ikea-yellow)]">
-            IKEA
+          <div className="relative h-12 w-[102px] overflow-hidden">
+            <Image
+              src="/images/Ikea.png"
+              alt="IKEA logo"
+              fill
+              sizes="102px"
+              className="object-contain"
+            />
           </div>
           <h2 className="mt-6 text-5xl font-black">Tentang IKEA</h2>
           <p className="font-ff-zwo mt-4 max-w-2xl text-base leading-8 text-white/75">
-            Struktur baru ini dibuat lebih dekat ke storefront retail: lebar penuh, entry point lebih banyak, cart drawer di header, dan section visual yang tidak lagi mengambang jauh dari frame luar.
+            Berfokus pada peningkatan kualitas hidup, IKEA menawarkan solusi interior rumah yang memadukan fungsionalitas dengan desain modern namun tetap terjangkau. Melalui berbagai pilihan perabot seperti tempat tidur, lemari, hingga sofa bergaya, kami berkomitmen membantu Anda menciptakan rumah yang lebih nyaman bagi
           </p>
         </div>
         <div className="bg-[#111526] px-5 py-10 sm:px-8 lg:px-10">
