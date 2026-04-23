@@ -38,7 +38,7 @@ const heroSlides: HeroSlide[] = [
     copy:
       "",
     cta: "Belanja koleksi baru",
-    image: "/images/Ikea-dashboard.webp",
+    image: "/images/Ikea-dashboard2.jpg",
     alt: "Tampilan area toko IKEA",
     tone: "blue",
   },
@@ -311,10 +311,10 @@ export function IkeaShowcase() {
         return { ...item, product };
       })
       .filter(Boolean) as Array<{
-      productId: number;
-      quantity: number;
-      product: Product;
-    }>;
+        productId: number;
+        quantity: number;
+        product: Product;
+      }>;
   }, [cart]);
 
   const cartCount = cartEntries.reduce((sum, item) => sum + item.quantity, 0);
@@ -467,9 +467,8 @@ export function IkeaShowcase() {
                       key={slide.id}
                       type="button"
                       onClick={() => setActiveHero(index)}
-                      className={`h-3 ${
-                        activeHero === index ? "w-16 bg-white" : "w-4 bg-white/45"
-                      }`}
+                      className={`h-3 ${activeHero === index ? "w-16 bg-white" : "w-4 bg-white/45"
+                        }`}
                       aria-label={`Slide ${index + 1}`}
                     />
                   ))}
@@ -632,7 +631,7 @@ export function IkeaShowcase() {
                 Mainan dan boneka
               </p>
               <h2 className="mt-3 text-4xl font-black sm:text-2xl">
-                Empuk, gemas, dan tentunya asik buat diajak main.​
+                Empuk, gemas, dan tentunya asik buat diajak main.
               </h2>
             </div>
           </div>
